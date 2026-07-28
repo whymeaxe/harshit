@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bespoke Orders | Ferrum Precise</title>
+<!-- Google Fonts: Hanken Grotesk for primary typography, Geist Mono for labels -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Geist+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#e4e2e2",
+                    "on-primary-container": "#858383",
+                    "surface-container-highest": "#e2e2e2",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "primary-fixed": "#e5e2e1",
+                    "on-surface-variant": "#444748",
+                    "on-error": "#ffffff",
+                    "secondary": "#5e5e5e",
+                    "surface-dim": "#dadada",
+                    "surface-container": "#eeeeee",
+                    "primary": "#000000",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "on-primary-fixed": "#1c1b1b",
+                    "outline": "#747878",
+                    "secondary-container": "#e1dfdf",
+                    "tertiary": "#000000",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "primary-container": "#1c1b1b",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f3f3f3",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "inverse-primary": "#c8c6c5",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#464747",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-tint": "#5f5e5e",
+                    "tertiary-fixed": "#e2e2e2",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "surface": "#f9f9f9",
+                    "background": "#f9f9f9",
+                    "outline-variant": "#c4c7c7",
+                    "on-tertiary-container": "#838484",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary-container": "#1a1c1c",
+                    "on-secondary-container": "#626262",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f1f1f1",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f9f9f9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px",
+                    "container-max": "1440px",
+                    "unit": "4px",
+                    "margin-tablet": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-sm": ["Hanken Grotesk"],
+                    "mono-label": ["Geist Mono"],
+                    "label-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "mono-label": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .technical-grid {
+        background-image: linear-gradient(#e5e5e5 1px, transparent 1px), linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .inset-active:active {
+        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #f9f9f9; }
+      ::-webkit-scrollbar-thumb { background: #c4c7c7; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="w-full h-16 bg-surface border-b border-outline-variant sticky top-0 z-50">
+<div class="flex justify-between items-center px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="text-headline-md font-headline-md font-bold tracking-tight text-primary cursor-pointer">
+                Ferrum Precise
+            </div>
+<nav class="hidden md:flex items-center gap-8 h-full">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="index.html">Catalog</a>
+<a class="font-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-all cursor-pointer" href="bespoke-orders.html">Bespoke Orders</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="about.html">About</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="contact.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer transition-all active:scale-95" data-icon="shopping_cart">shopping_cart</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-16">
+<!-- Hero Section -->
+<section class="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="space-y-6">
+<span class="font-mono-label text-mono-label text-outline uppercase tracking-widest">Commission Service</span>
+<h1 class="font-display-lg text-display-lg text-primary max-w-xl">
+                    Precise engineering for your unique vision.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    We translate architectural concepts and functional requirements into hand-welded steel masterpieces. From structural utility to avant-garde installations.
+                </p>
+<div class="pt-4">
+<a class="inline-block bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md transition-all active:scale-95 hover:bg-opacity-90" href="#inquiry-form">
+                        Initiate Consultation
+                    </a>
+</div>
+</div>
+<div class="relative h-[500px] overflow-hidden rounded-lg border border-outline-variant group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional architectural workshop scene with a master craftsman welding a complex wireframe furniture piece. The lighting is focused and technical, with bright orange sparks contrasting against the cool, minimalist grey concrete environment. The composition is clean and follows the rule of thirds, highlighting the precision of the metal joints and the industrial aesthetic of Ferrum Precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc1yLwAoaAceexyoLuSD-wXcufUe5D31MLKYpMOYPMW1o_S-fjjKWaXbxkvuy4Y8Wxr4Ne1zC6q3qWsigNOsp1FP_Wntcbh8clUBm2GqEYxjAAZxKVSAbekqYr5zMIGeeDs1H0-wcJDyw73MoOe-cOCizkIC6IbdC88kbuqpF3tBfCLEFKVIPoqF5pFW5rIGSNn3WkpJ_gmvyZWNClIbizo9m8TC9de82e3iQw59IgBmRUmB_PHBCGsA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+</section>
+<!-- The Master Craftsman's Process -->
+<section class="mb-24 border-t border-outline-variant pt-24">
+<div class="mb-12">
+<span class="font-mono-label text-mono-label text-outline uppercase tracking-widest">Workflow</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">The Master Craftsman's Process</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Step 1 -->
+<div class="space-y-4 p-6 bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="font-display-lg text-display-lg text-surface-variant opacity-30 select-none">01</span>
+<h3 class="font-headline-md text-headline-md text-primary">Technical Draft</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">We review your sketches and dimensions to create a structural wireframe blueprint using industrial CAD standards.</p>
+</div>
+<!-- Step 2 -->
+<div class="space-y-4 p-6 bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="font-display-lg text-display-lg text-surface-variant opacity-30 select-none">02</span>
+<h3 class="font-headline-md text-headline-md text-primary">Material Curation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sourcing high-grade alloys specific to your project's load requirements and aesthetic finish preferences.</p>
+</div>
+<!-- Step 3 -->
+<div class="space-y-4 p-6 bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="font-display-lg text-display-lg text-surface-variant opacity-30 select-none">03</span>
+<h3 class="font-headline-md text-headline-md text-primary">Precision Welding</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hand-welded using TIG techniques to ensure seamless transitions and unparalleled structural integrity.</p>
+</div>
+<!-- Step 4 -->
+<div class="space-y-4 p-6 bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="font-display-lg text-display-lg text-surface-variant opacity-30 select-none">04</span>
+<h3 class="font-headline-md text-headline-md text-primary">Final Refinement</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Grinding, polishing, and industrial coating to your specification, followed by a rigorous 22-point quality check.</p>
+</div>
+</div>
+</section>
+<!-- Inquiry Form Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-24" id="inquiry-form">
+<div class="lg:col-span-4 space-y-6">
+<div class="p-8 bg-surface-container-high rounded-lg border border-outline-variant h-full flex flex-col justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Technical Inquiry</h2>
+<p class="mt-4 font-body-md text-on-surface-variant">Provide the foundational parameters of your project. Our lead engineer will review and respond within 48 hours.</p>
+</div>
+<div class="space-y-4 pt-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+<span class="font-label-md text-label-md">bespoke@ferrumprecise.com</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="font-label-md text-label-md">Zürich Engineering Hub</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8">
+<form class="p-8 bg-surface-container-lowest border border-outline-variant rounded-lg shadow-sm space-y-8" onsubmit="event.preventDefault(); alert('Inquiry sent to engineering team.');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Name -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface uppercase block">Full Name</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant focus:border-primary focus:ring-0 rounded-lg font-body-md transition-colors outline-none" placeholder="e.g. Marcus Aurelius" type="text"/>
+</div>
+<!-- Email -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface uppercase block">Email Address</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant focus:border-primary focus:ring-0 rounded-lg font-body-md transition-colors outline-none" placeholder="client@example.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project Type -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface uppercase block">Project Category</label>
+<select class="w-full px-4 py-3 bg-surface border border-outline-variant focus:border-primary focus:ring-0 rounded-lg font-body-md appearance-none outline-none">
+<option>Art Installation</option>
+<option>Architectural Furniture</option>
+<option>Industrial Utility</option>
+<option>Retail Display</option>
+<option>Other / Bespoke</option>
+</select>
+</div>
+<!-- Dimensions -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface uppercase block">Primary Dimensions (LxWxH)</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant focus:border-primary focus:ring-0 rounded-lg font-body-md transition-colors outline-none" placeholder="e.g. 120cm x 80cm x 210cm" type="text"/>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface uppercase block">Project Description &amp; Requirements</label>
+<textarea class="w-full px-4 py-3 bg-surface border border-outline-variant focus:border-primary focus:ring-0 rounded-lg font-body-md transition-colors outline-none resize-none" placeholder="Describe the function, environment, and any specific structural constraints..." rows="4"></textarea>
+</div>
+<!-- Upload -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface uppercase block">Reference Sketches / Blueprints</label>
+<div class="border-2 border-dashed border-outline-variant rounded-lg p-8 flex flex-col items-center justify-center gap-2 hover:bg-surface transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="cloud_upload">cloud_upload</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Drop PDF, JPEG or CAD files here or click to browse</p>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full md:w-auto bg-primary text-on-primary px-12 py-4 rounded-lg font-label-md transition-all active:scale-95 hover:bg-opacity-90 flex items-center justify-center gap-2" type="submit">
+                            Submit Engineering Inquiry
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Previous Work Bento Grid -->
+<section class="mb-24">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-mono-label text-mono-label text-outline uppercase tracking-widest">Case Studies</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Technical Portfolio</h2>
+</div>
+<a class="font-label-md text-label-md text-primary underline underline-offset-4 flex items-center gap-1" href="#">
+                    View Full Archive
+                </a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 h-[800px]">
+<div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-lg border border-outline-variant group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A large-scale geometric wireframe sculpture in a high-end corporate lobby. The sculpture is made of thin, high-tensile steel rods forming a complex polyhedral structure. The lighting is sophisticated gallery-style spot lighting, highlighting the thin shadows cast on the pristine white walls. Professional technical minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH22XRheJkbBL1LuEQp-Ta0s1EQ7HVS6Nv8CMFOpZJ6m8hUcaJGSrz3aUkXrCM0ag9zaZgjWLgvm3bUUpTRLANw1-5mivyASlwQuVUozZEF5WjSlEs4eVF1nU4VtdwYPVYlbrSH7Xl0EHUXoes0QSodbom1eOHkTwjPGAkMk5Et7WthHnU2TfeUQta2DewjicDdwtcbgHh99KgrbBu9PiigA4LF3SO6THPxhQV1FQslsZE9eEkBjzIQQ"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
+<span class="font-mono-label text-xs uppercase opacity-70">Case 0812</span>
+<h4 class="font-headline-md text-headline-md mt-1">Lumina Atrium Installation</h4>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-lg border border-outline-variant group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a hand-welded steel chair frame with perfectly finished joints. The metal has a subtle brushed industrial finish. The lighting is soft and directional, accentuating the clean lines and geometric perfection of the furniture piece. Minimalist studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIYDnhhfq0fzgwIv1TAd3NSDDXJEAJWv5N4OkRZGJIqObGT3WOyjNTBtzO8jo6bVyerPKKleA2vU2Or8gi8HnWrnUDmdwctXORalCN2WpOIHwc2yg5PHWLmQXhWxsnPF8Tudlm_s1nPrujU4tHFBrruDOn39wPIAg245i98uB96Cy3XKuZn4JpMWET4uXQYGrWn-CBtDKfs28zUD6YlKMQq44mWuYqV9Zo5TNsFhM-UNMjjqxmEyyLEQ"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
+<h4 class="font-label-md text-label-md">Series-7 Utility Seating</h4>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-lg border border-outline-variant group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A modular wire-mesh storage system integrated into a minimalist home office. The grid is perfectly square, powder-coated in matte black, and holds technical drawings and tools. Clean architectural photography style with high contrast and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfW41dRvPvtVEjEZJm-EzGaIPByzR5snoWy7Dh23PLWV6xZ1WYcTR6tr7vhk_m1Lus_FReLBwZkMYk3FllJd4WtmZw-8GnZFZkzTw4jOZUtRu8H2QEqRKoxnCj273ZHIC7s6Yc-PrOO8ydPAiKyLZSfMQ5p1V0FhA31GOF0iZ6OoZl12pGo24zCNkGnDmvhRmQQwVnW2Yetif8wNA8CUmUjH14BYf5W4XQNqQzZb-5TCq6L_LIPpD0xg"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
+<h4 class="font-label-md text-label-md">Grid-System Shelving</h4>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="text-label-md font-label-md font-bold text-primary">Ferrum Precise</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">High-precision wireframe engineering and artisanal metalwork for modern spaces.</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a>
+</div>
+<div class="flex flex-col gap-2 md:items-end">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+<div class="pt-4 font-body-sm text-body-sm text-on-surface-variant">© 2024 Ferrum Precise. All rights reserved.</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for form inputs
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label').classList.remove('text-primary');
+            });
+        });
+    </script>
+</body></html>

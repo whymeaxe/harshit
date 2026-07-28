@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ferrum Precise | Master Wirecraft &amp; Bespoke Metalwork</title>
+<!-- Google Fonts: Hanken Grotesk for body/headlines & Geist Mono for labels -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#444748",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-container": "#eeeeee",
+                        "surface": "#f9f9f9",
+                        "primary-fixed": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "outline": "#747878",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#5e5e5e",
+                        "on-primary-fixed-variant": "#474746",
+                        "tertiary": "#000000",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-container": "#858383",
+                        "surface-dim": "#dadada",
+                        "on-surface": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e2e2e2",
+                        "inverse-primary": "#c8c6c5",
+                        "on-secondary-container": "#626262",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-container": "#1a1c1c",
+                        "surface-tint": "#5f5e5e",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-low": "#f3f3f3",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e4e2e2",
+                        "inverse-surface": "#2f3131",
+                        "primary-container": "#1c1b1b",
+                        "primary": "#000000",
+                        "secondary-container": "#e1dfdf",
+                        "background": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary-container": "#838484",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-bright": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-tablet": "24px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "container-max": "1440px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "mono-label": ["Geist Mono"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "mono-label": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .technical-border {
+            border: 1px solid #e5e5e5;
+        }
+        .hover-lift:hover {
+            border-color: #1a1a1a;
+        }
+        .active-inset:active {
+            background-color: #f0f0f0;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-surface w-full h-16 border-b border-outline-variant sticky top-0 z-50">
+<div class="flex justify-between items-center px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="text-headline-md font-headline-md font-bold tracking-tight text-primary cursor-pointer active:scale-95 transition-all">
+                Ferrum Precise
+            </div>
+<div class="hidden md:flex items-center gap-8 h-full">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-all cursor-pointer" href="index.html">Catalog</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="bespoke-orders.html">Bespoke Orders</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="about.html">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-all" data-icon="shopping_cart">shopping_cart</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto">
+<!-- Hero Section: Master Craftsman & Wire Work -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-0 min-h-[716px] border-b border-outline-variant">
+<!-- Left: Master Craftsman Profile -->
+<div class="md:col-span-5 flex flex-col justify-center p-margin-desktop bg-surface border-r border-outline-variant">
+<div class="mb-8">
+<span class="font-mono-label text-mono-label uppercase tracking-widest text-on-surface-variant mb-2 block">Master Craftsman</span>
+<h1 class="font-display-lg text-display-lg mb-4 text-primary leading-tight">Artistry in <br/>Every Gauge.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                        Harshit Mandowra has spent three decades perfecting the tension between metal and space. Ferrum Precise is the culmination of technical precision and artistic intuition.
+                    </p>
+</div>
+<div class="flex items-center gap-4 p-4 technical-border bg-white rounded-lg self-start">
+<div class="w-16 h-16 bg-surface-container rounded-full overflow-hidden border border-outline-variant">
+<img alt="Harshit Mandowra, Chief Artisan &amp; Founder" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh8CreursMR0TZ3zyBNBWFVMz4r3bBz7MP1anSa8e0vwhPGaPORkLtWlkLL2TufnYI9BRNsRduSiaDyc6ZoLfMt4Wo0SOLaUOBhwuvoIB256pEKgfAt0N-7hIh6jLb-UmeEfnNjjsrRkCr73MfGqrYXx8FzTJaF4HDA-7bDZ60NhovK7WFAUarys6CaWawgtGveW4YK5OtybuqMmFDnNOt4MUH2bmS-bRo_Sl03JIid0HnG-m5zDV66piTKtCIYxIQb-U"/>
+</div>
+<div>
+<div class="font-label-md text-label-md text-primary">ELIAS THORNE</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Chief Artisan &amp; Founder</div>
+</div>
+</div>
+<div class="mt-12">
+<button class="bg-primary text-on-primary px-8 py-3 rounded text-label-md uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all">
+                        View Signature Collection
+                    </button>
+</div>
+</div>
+<!-- Right: Wire Work Photo -->
+<div class="md:col-span-7 relative h-full min-h-[500px]">
+<div class="absolute inset-0 bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover opacity-90 transition-transform duration-[20s] hover:scale-110" data-alt="Close-up macro photography of intricate steel wire mesh art. The silver wires are woven into a complex, architectural pattern that plays with geometric shadows and highlights. The lighting is crisp and cool, reflecting off the metallic surfaces. The aesthetic is extremely clean, minimalist, and high-tech, showcasing the precision of industrial craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyaWrlbkOEJFv6UIJ0Ofl0vKME-Qsa8IJvF4f6542NHYnIK3bS90LMqLnRdZ1xuSog1POY8rf15YshvO-7pE8xilbbOa0ecpZYc_kIsHjx7Pqt8BzHBhU02MYqdaxXmSLhYZW5sv8YXEYhkHpqGIwneTzbFN6RD2FcDuYLO4aqScdZeC0b7JVPOM7w-C1ctSoMuM8E_UDBcjGwp3zIf0sMrqZqsJ-CcRDPJ0dykEiRSUEWwlT0U5T0Hw"/>
+</div>
+<!-- Decorative Grid Overlay -->
+<div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(#e5e5e5 1px, transparent 1px), linear-gradient(90deg, #e5e5e5 1px, transparent 1px); background-size: 40px 40px; opacity: 0.1;"></div>
+<div class="absolute bottom-8 right-8 bg-white/80 backdrop-blur-sm p-6 technical-border max-w-xs">
+<span class="font-mono-label text-mono-label text-primary">TECH_SPEC_042</span>
+<p class="font-body-sm text-body-sm mt-2 text-on-surface-variant">Hand-tensioned 316L stainless steel filament, exhibiting 0.02mm tolerance across structural vertices.</p>
+</div>
+</div>
+</section>
+<!-- Product Catalog Section -->
+<section class="py-16 px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 border-b border-outline-variant pb-8">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Available Instruments</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Precision-engineered wire sculptures and bespoke metal components for discerning collections.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+<!-- Search Bar -->
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-white technical-border rounded w-full md:w-64 font-body-sm focus:outline-none focus:border-primary transition-all" placeholder="Search collection..." type="text"/>
+</div>
+<!-- Filter Options -->
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-white technical-border rounded font-label-md text-primary hover:bg-surface-container transition-colors active-inset">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                            Filter
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white technical-border rounded font-label-md text-primary hover:bg-surface-container transition-colors active-inset">
+<span class="material-symbols-outlined text-[18px]" data-icon="swap_vert">swap_vert</span>
+                            Sort
+                        </button>
+</div>
+</div>
+</div>
+<!-- Bento Grid Catalog -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group bg-white technical-border hover-lift transition-all duration-300">
+<div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist sculpture made of thin black iron wire forming the silhouette of a sphere within a cube. The lighting creates stark geometric shadows against a white backdrop. The style is architectural and clinical, focusing on the precision of the bends." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgjFaNtTLyZgKc2CgjjamfyKq2fNrb6Ua1k1sL87pSAUJAz3bV5RWxFXxeSkVdJHFwYhdl0LcEBohcVZGeEjTBbNe7ii7FPzRX-lOJ0ZmskfTFdVG8-Ymen01rcmu4uE_wb3z6PrOIeEVPGJFYMtHZqtD5O6UJgnSolW-b0x_Cks6x6NH4cuOvkcTN_AgtnBn3zM7Jue0O9-9oC4N5iUEQTkYAEUeRiY93ZrHq9p3IJ7J9h9X-dqUMXg"/>
+<div class="absolute top-3 right-3">
+<span class="bg-primary text-white font-mono-label text-[10px] px-2 py-1 rounded">LIMITED</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary leading-none">Axis Cube</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">$1,250</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Hand-welded structural study in oxidized carbon steel.</p>
+<button class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white technical-border hover-lift transition-all duration-300">
+<div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Macro view of a spool of ultra-fine copper wire shimmering in warm golden light. The wire is perfectly wound with technical regularity. The background is a blurred industrial setting with soft bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAa4_4rzl86Zy5qaOaIXwjbCQI3sihCXETfkrk6F7h4_q9kOuxabcbRJz1BjB9FSAFbI2Iy1kXe_37aT_8UkEVJPFJ8vVou3yI1cfEUV_BcDqV0EA6Ejh77KSZQboHftH9zLTsi-6sgCiiaSqCQOWFY8ZLbI1bshILUr6MQx5vq1V33xWeZpe5j9g9aHb61AYR9_qGmcEqnSTtYNZn4OznFCgDAWc-D1HQRNsTnsoY4aSbGYgIcuR0eA"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary leading-none">Cu 0.5</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">$480</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Premium 0.5mm copper filament spool for bespoke jewelry base work.</p>
+<button class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white technical-border hover-lift transition-all duration-300">
+<div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A wall-mounted wire sculpture resembling a topographical map. Made from different thicknesses of titanium wire, it creates a 3D relief effect. The metal has a subtle iridescent blue tint from heat treating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5NJYwvvd-MQvMHIHuITmdCQRu6NXbPw1lyqBmW1QDDFHImHuggVHjlKfrQVJH52O_E0kMBmvm79VmfR-plBFClsPrUI22sS_jtPVRmEbjSXfawlWPhp-mo0wewF-n9Apoyspbk88qMbixW5UezyyLXZdebOadS-ygzWs3NzigORDnTRQ3RQSkEOVXmze6UFCyOfDT74qlyE4fsXT-IV_uvPe1lVdOElIcPR9hvrmka6Gve--NdJdHg"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary leading-none">Topo-Relief</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">$3,100</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Heat-treated titanium topography. Wall-mounted installation piece.</p>
+<button class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white technical-border hover-lift transition-all duration-300">
+<div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of a delicate wire birdcage-like structure with an organic, nest-inspired design. The wires are chaotic yet controlled, made from sterling silver. Shot on a grey slate surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWYBUp5ifvtauxBsKen9ppTo8YqZl04xrzl18CeOkTPVXgRoIhGu1QzrZD2bzgxmBQevrEExoADn6Ckn_ig_CjinAsoE4dfckLGtu4J2xEyb5lvW2udb8ko2Lv7Raw_TBvVyOEylaTz4Y6Is3T8a_hYWCcWQWZSEzRdXv7RegQ1clpjPpkcRWw1_qMOcCrd7kl_AtzXniPJeln573jIv5VeGDRdZnA6NstPrcX-3ASSH793H2UN7FXA"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary leading-none">Nest Vessel</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">$850</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Sterling silver woven vessel. Intersection of functional craft and art.</p>
+<button class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="flex items-center gap-2 font-label-md text-primary uppercase tracking-widest group">
+                    View Entire Collection
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="trending_flat">trending_flat</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface w-full py-12 border-t border-outline-variant mt-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div>
+<div class="text-label-md font-label-md font-bold text-primary mb-4">Ferrum Precise</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+                    Advancing the craft of wirework through technical precision and architectural vision. Built for the modern collector.
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-8">© 2024 Ferrum Precise. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-primary mb-2">NAVIGATE</span>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="bespoke-orders.html">Bespoke Orders</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Material Grades</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Studio Journal</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="index.html">Catalog</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md text-primary mb-2">CONNECT</span>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Instagram</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">LinkedIn</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Shipping &amp; Returns</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Header scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-sm');
+                nav.style.backgroundColor = 'rgba(249, 249, 249, 0.95)';
+                nav.style.backdropFilter = 'blur(8px)';
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.style.backgroundColor = '#f9f9f9';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-1', 'ring-primary');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-1', 'ring-primary');
+        });
+    </script>
+</body></html>

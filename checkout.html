@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | Ferrum Precise</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Geist+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#444748",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "on-secondary-fixed-variant": "#464747",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-container": "#eeeeee",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#e5e2e1",
+                    "error": "#ba1a1a",
+                    "outline": "#747878",
+                    "surface-variant": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#5e5e5e",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary": "#000000",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-primary-container": "#858383",
+                    "surface-dim": "#dadada",
+                    "on-surface": "#1a1c1c",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#e2e2e2",
+                    "inverse-primary": "#c8c6c5",
+                    "on-secondary-container": "#626262",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f1f1f1",
+                    "tertiary-container": "#1a1c1c",
+                    "surface-tint": "#5f5e5e",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c4c7c7",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e4e2e2",
+                    "inverse-surface": "#2f3131",
+                    "primary-container": "#1c1b1b",
+                    "primary": "#000000",
+                    "secondary-container": "#e1dfdf",
+                    "background": "#f9f9f9",
+                    "on-background": "#1a1c1c",
+                    "on-tertiary-container": "#838484",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "surface-bright": "#f9f9f9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-tablet": "24px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "container-max": "1440px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "mono-label": ["Geist Mono"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-sm": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "mono-label": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f9f9f9;
+        }
+        input:focus {
+            outline: none;
+            border-color: #1a1a1a !important;
+            box-shadow: none !important;
+        }
+        .form-section-title {
+            @apply font-label-md text-label-md uppercase tracking-widest text-on-surface-variant mb-6;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant w-full h-16 flex items-center">
+<nav class="flex justify-between items-center px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="text-headline-md font-headline-md font-bold tracking-tight text-primary">Ferrum Precise</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="index.html">Catalog</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="bespoke-orders.html">Bespoke Orders</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="about.html">About</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center space-x-4">
+<div class="cursor-pointer transition-all active:scale-95 text-primary">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</div>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-12">
+<!-- Breadcrumbs / Back button -->
+<div class="mb-12">
+<a class="inline-flex items-center text-on-surface-variant hover:text-primary transition-colors group" href="index.html">
+<span class="material-symbols-outlined mr-2 text-[20px] transition-transform group-hover:-translate-x-1" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Return to Cart</span>
+</a>
+<h1 class="font-display-lg text-display-lg mt-4">Secure Checkout</h1>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left Column: Forms -->
+<div class="lg:col-span-7 space-y-16">
+<!-- Contact Information -->
+<section>
+<h2 class="form-section-title">Contact Information</h2>
+<div class="space-y-4">
+<div class="flex flex-col">
+<label class="font-label-md text-label-md mb-2">Email Address</label>
+<input class="bg-surface-container-lowest border border-outline-variant px-4 py-3 rounded-DEFAULT font-body-md text-body-md w-full" placeholder="email@example.com" type="email"/>
+</div>
+</div>
+</section>
+<!-- Shipping Address -->
+<section>
+<h2 class="form-section-title">Shipping Address</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col">
+<label class="font-label-md text-label-md mb-2">First Name</label>
+<input class="bg-surface-container-lowest border border-outline-variant px-4 py-3 rounded-DEFAULT font-body-md text-body-md" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-md text-label-md mb-2">Last Name</label>
+<input class="bg-surface-container-lowest border border-outline-variant px-4 py-3 rounded-DEFAULT font-body-md text-body-md" type="text"/>
+</div>
+<div class="flex flex-col md:col-span-2">
+<label class="font-label-md text-label-md mb-2">Address</label>
+<input class="bg-surface-container-lowest border border-outline-variant px-4 py-3 rounded-DEFAULT font-body-md text-body-md" placeholder="Street address and house number" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-md text-label-md mb-2">City</label>
+<input class="bg-surface-container-lowest border border-outline-variant px-4 py-3 rounded-DEFAULT font-body-md text-body-md" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-md text-label-md mb-2">Postal Code</label>
+<input class="bg-surface-container-lowest border border-outline-variant px-4 py-3 rounded-DEFAULT font-body-md text-body-md" type="text"/>
+</div>
+<div class="flex flex-col md:col-span-2">
+<label class="font-label-md text-label-md mb-2">Country</label>
+<select class="bg-surface-container-lowest border border-outline-variant px-4 py-3 rounded-DEFAULT font-body-md text-body-md appearance-none">
+<option>United States</option>
+<option>United Kingdom</option>
+<option>Germany</option>
+<option>Japan</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Payment Method -->
+<section>
+<h2 class="form-section-title">Payment Method</h2>
+<div class="space-y-3">
+<!-- Credit Card Option -->
+<div class="border border-primary bg-white p-6 rounded-DEFAULT transition-all">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center">
+<input checked="" class="text-primary focus:ring-0 w-4 h-4 mr-3" id="cc" name="payment" type="radio"/>
+<label class="font-body-md text-body-md font-semibold" for="cc">Credit Card</label>
+</div>
+<div class="flex space-x-2 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="credit_card">credit_card</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col md:col-span-2">
+<label class="font-label-md text-label-md mb-2">Card Number</label>
+<input class="bg-surface border border-outline-variant px-4 py-3 rounded-DEFAULT font-mono-label text-body-md" placeholder="0000 0000 0000 0000" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-md text-label-md mb-2">Expiry Date</label>
+<input class="bg-surface border border-outline-variant px-4 py-3 rounded-DEFAULT font-mono-label text-body-md" placeholder="MM / YY" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-md text-label-md mb-2">CVV</label>
+<input class="bg-surface border border-outline-variant px-4 py-3 rounded-DEFAULT font-mono-label text-body-md" placeholder="000" type="text"/>
+</div>
+</div>
+</div>
+<!-- PayPal Option -->
+<div class="border border-outline-variant bg-surface-container-lowest p-6 rounded-DEFAULT hover:border-on-surface-variant transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<input class="text-primary focus:ring-0 w-4 h-4 mr-3" id="paypal" name="payment" type="radio"/>
+<label class="font-body-md text-body-md font-semibold" for="paypal">PayPal</label>
+</div>
+<div class="text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="lg:col-span-5">
+<div class="sticky top-24">
+<div class="bg-white border border-outline-variant p-8 rounded-DEFAULT">
+<h2 class="form-section-title">Order Summary</h2>
+<!-- Item List -->
+<div class="space-y-6 mb-8">
+<!-- Item 1 -->
+<div class="flex items-start">
+<div class="w-20 h-24 bg-surface border border-outline-variant flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional, high-end product photo of a minimalist Ferrum Precise shoe rack made of industrial grade matte black steel. The lighting is clean and architectural, highlighting the precise welds and geometric structure against a soft gray background. The overall aesthetic is technical minimalism, conveying strength and high craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlL8E0_HxPOshRIIPT_vfvNI_PP2BC7EHJiTsazDsowl-NOt_goUJansG0C2h1taLL4IJtm8qjsupaRGXceeylU7z2tx_Yzy56wVFjRmUp9CQnMSMKGOcJdIvrNbO6v9qbl_cBF_Bgs1CEflYhbdtWeSyqJi2OGSHTyKQCG-mh0oTi5-0S--rFiNlRSoj9ILLxniU_fQJUGeUSSYEqkn7GP7NsbELcAkel3bp7QTMjtI1FOCyxjg5ggA"/>
+</div>
+<div class="ml-4 flex-grow">
+<div class="flex justify-between">
+<h3 class="font-body-md text-body-md font-bold">Precision Shoe Rack</h3>
+<span class="font-mono-label text-body-md">$480.00</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-1">Matte Black / 3-Tier</p>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-0.5">Qty: 1</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start">
+<div class="w-20 h-24 bg-surface border border-outline-variant flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up studio photograph of a multi-tier industrial metal basket storage unit. The design features a delicate yet sturdy steel mesh pattern with a technical, architectural finish. Lighting is crisp and cool-toned, accentuating the metallic texture and the structural integrity of the Ferrum Precise craftsmanship. The scene is clean, minimal, and highly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-ckaSGdIQxhSHpntirRkseJ62GZ4wR-xgMJHRzwKY3xoxnxFIumj1_f0Z-8Mge9h7yNfJ9HEr1c78d80ODvXatjGvM-CoqHM3jtj5pnJdLK8jGUp7W-8z755b9_xJHv7Enx-s6O41kwMnDzeYfOhBekSG9Ngp3rD_K1-Q81ZmdDh7bCRMU3UJf_RpQPfeUzBGTc4cSmt7bzdmSMIVCM36G8nDhR-p0TL5xy6ijIf0FOAnk9iN5amoBg"/>
+</div>
+<div class="ml-4 flex-grow">
+<div class="flex justify-between">
+<h3 class="font-body-md text-body-md font-bold">Multi-Tier Basket</h3>
+<span class="font-mono-label text-body-md">$225.00</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-1">Brushed Steel / Large</p>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-0.5">Qty: 1</p>
+</div>
+</div>
+</div>
+<!-- Calculations -->
+<div class="border-t border-outline-variant pt-6 space-y-3">
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-body-md text-body-md">Subtotal</span>
+<span class="font-mono-label text-body-md">$705.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-body-md text-body-md">Shipping</span>
+<span class="font-mono-label text-body-md">$45.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-body-md text-body-md">Taxes</span>
+<span class="font-mono-label text-body-md">$56.40</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant mt-4">
+<span class="font-headline-md text-headline-md font-bold">Total</span>
+<span class="font-mono-label text-headline-md font-bold text-primary">$806.40</span>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full mt-8 bg-primary text-on-primary py-4 rounded-DEFAULT font-label-md text-label-md uppercase tracking-widest hover:bg-opacity-90 transition-all active:scale-[0.98]">
+                            Complete Order
+                        </button>
+<div class="mt-6 flex items-center justify-center space-x-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+<span class="font-body-sm text-body-sm">Encrypted and Secure Transaction</span>
+</div>
+</div>
+<!-- Policy Links -->
+<div class="mt-6 px-4">
+<p class="text-center text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
+                            By clicking 'Complete Order', you agree to our <a class="underline hover:text-primary" href="#">Terms of Service</a> and acknowledge our <a class="underline hover:text-primary" href="#">Privacy Policy</a>.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant w-full py-12 mt-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="text-label-md font-label-md font-bold text-primary">Ferrum Precise</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm">© 2024 Ferrum Precise. All rights reserved.</p>
+</div>
+<div class="flex flex-col space-y-2">
+<a class="text-on-surface-variant font-body-sm text-body-sm hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-body-sm text-body-sm hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant font-body-sm text-body-sm hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a>
+</div>
+<div class="flex md:justify-end space-x-6">
+<a class="text-on-surface-variant font-body-sm text-body-sm hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="text-on-surface-variant font-body-sm text-body-sm hover:text-primary transition-colors" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for payment method selection
+        const paymentOptions = document.querySelectorAll('input[name="payment"]');
+        paymentOptions.forEach(option => {
+            option.addEventListener('change', (e) => {
+                paymentOptions.forEach(opt => {
+                    const parent = opt.closest('div.border');
+                    if (opt.checked) {
+                        parent.classList.remove('border-outline-variant', 'bg-surface-container-lowest');
+                        parent.classList.add('border-primary', 'bg-white');
+                    } else {
+                        parent.classList.add('border-outline-variant', 'bg-surface-container-lowest');
+                        parent.classList.remove('border-primary', 'bg-white');
+                    }
+                });
+            });
+        });
+
+        // Simple validation visualization
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                if (input.value) {
+                    input.classList.add('border-on-surface-variant');
+                } else {
+                    input.classList.remove('border-on-surface-variant');
+                }
+            });
+        });
+    </script>
+</body></html>
