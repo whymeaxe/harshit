@@ -131,7 +131,7 @@
 <nav class="bg-surface w-full h-16 border-b border-outline-variant sticky top-0 z-50">
 <div class="flex justify-between items-center px-margin-desktop max-w-container-max mx-auto h-full">
 <div class="text-headline-md font-headline-md font-bold tracking-tight text-primary cursor-pointer active:scale-95 transition-all">
-                Ferrum Precise
+                HM TRADELINK
             </div>
 <div class="hidden md:flex items-center gap-8 h-full">
 <a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-all cursor-pointer" href="index.html">Catalog</a>
@@ -140,7 +140,7 @@
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="contact.html">Contact</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-all" data-icon="shopping_cart">shopping_cart</button>
+<button class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-all relative" data-cart-trigger="" data-icon="shopping_cart" aria-label="Open cart">shopping_cart</button>
 </div>
 </div>
 </nav>
@@ -153,7 +153,7 @@
 <span class="font-mono-label text-mono-label uppercase tracking-widest text-on-surface-variant mb-2 block">Master Craftsman</span>
 <h1 class="font-display-lg text-display-lg mb-4 text-primary leading-tight">Artistry in <br/>Every Gauge.</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
-                        Harshit Mandowra has spent three decades perfecting the tension between metal and space. Ferrum Precise is the culmination of technical precision and artistic intuition.
+                        Harshit Mandowra has spent three decades perfecting the tension between metal and space. HM TRADELINK is the culmination of technical precision and artistic intuition.
                     </p>
 </div>
 <div class="flex items-center gap-4 p-4 technical-border bg-white rounded-lg self-start">
@@ -166,7 +166,7 @@
 </div>
 </div>
 <div class="mt-12">
-<button class="bg-primary text-on-primary px-8 py-3 rounded text-label-md uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all">
+<button id="view-signature-collection" class="bg-primary text-on-primary px-8 py-3 rounded text-label-md uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all">
                         View Signature Collection
                     </button>
 </div>
@@ -185,7 +185,7 @@
 </div>
 </section>
 <!-- Product Catalog Section -->
-<section class="py-16 px-margin-desktop">
+<section id="catalog" class="py-16 px-margin-desktop scroll-mt-16">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 border-b border-outline-variant pb-8">
 <div class="max-w-xl">
 <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Available Instruments</h2>
@@ -195,25 +195,52 @@
 <!-- Search Bar -->
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors" data-icon="search">search</span>
-<input class="pl-10 pr-4 py-2 bg-white technical-border rounded w-full md:w-64 font-body-sm focus:outline-none focus:border-primary transition-all" placeholder="Search collection..." type="text"/>
+<input id="catalog-search" class="pl-10 pr-4 py-2 bg-white technical-border rounded w-full md:w-64 font-body-sm focus:outline-none focus:border-primary transition-all" placeholder="Search collection..." type="text"/>
 </div>
 <!-- Filter Options -->
 <div class="flex gap-2">
-<button class="flex items-center gap-2 px-4 py-2 bg-white technical-border rounded font-label-md text-primary hover:bg-surface-container transition-colors active-inset">
+<div class="relative">
+<button id="filter-btn" class="flex items-center gap-2 px-4 py-2 bg-white technical-border rounded font-label-md text-primary hover:bg-surface-container transition-colors active-inset">
 <span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
                             Filter
                         </button>
-<button class="flex items-center gap-2 px-4 py-2 bg-white technical-border rounded font-label-md text-primary hover:bg-surface-container transition-colors active-inset">
+<div id="filter-panel" class="hidden absolute right-0 mt-2 w-56 bg-white technical-border rounded shadow-lg p-4 z-40" onclick="event.stopPropagation()">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase mb-3">Material</p>
+<label class="flex items-center gap-2 mb-2 font-body-sm text-body-sm cursor-pointer">
+<input class="rounded" data-filter-material="" type="checkbox" value="Steel"/> Steel
+                            </label>
+<label class="flex items-center gap-2 mb-2 font-body-sm text-body-sm cursor-pointer">
+<input class="rounded" data-filter-material="" type="checkbox" value="Copper"/> Copper
+                            </label>
+<label class="flex items-center gap-2 mb-2 font-body-sm text-body-sm cursor-pointer">
+<input class="rounded" data-filter-material="" type="checkbox" value="Titanium"/> Titanium
+                            </label>
+<label class="flex items-center gap-2 mb-3 font-body-sm text-body-sm cursor-pointer">
+<input class="rounded" data-filter-material="" type="checkbox" value="Silver"/> Silver
+                            </label>
+<button id="filter-clear" class="w-full text-center font-label-md text-label-md text-on-surface-variant hover:text-primary border-t border-outline-variant pt-3">Clear Filters</button>
+</div>
+</div>
+<div class="relative">
+<button id="sort-btn" class="flex items-center gap-2 px-4 py-2 bg-white technical-border rounded font-label-md text-primary hover:bg-surface-container transition-colors active-inset">
 <span class="material-symbols-outlined text-[18px]" data-icon="swap_vert">swap_vert</span>
                             Sort
                         </button>
+<div id="sort-panel" class="hidden absolute right-0 mt-2 w-52 bg-white technical-border rounded shadow-lg py-2 z-40" onclick="event.stopPropagation()">
+<button data-sort="featured" class="w-full text-left px-4 py-2 font-body-sm text-body-sm hover:bg-surface-container text-primary font-bold">Featured</button>
+<button data-sort="price-asc" class="w-full text-left px-4 py-2 font-body-sm text-body-sm hover:bg-surface-container">Price: Low to High</button>
+<button data-sort="price-desc" class="w-full text-left px-4 py-2 font-body-sm text-body-sm hover:bg-surface-container">Price: High to Low</button>
+<button data-sort="name-asc" class="w-full text-left px-4 py-2 font-body-sm text-body-sm hover:bg-surface-container">Name: A-Z</button>
+</div>
+</div>
 </div>
 </div>
 </div>
 <!-- Bento Grid Catalog -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div id="catalog-empty" class="hidden text-center py-16 text-on-surface-variant font-body-md">No pieces match your search or filters.</div>
+<div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
 <!-- Product Card 1 -->
-<div class="group bg-white technical-border hover-lift transition-all duration-300">
+<div class="product-card group bg-white technical-border hover-lift transition-all duration-300 cursor-pointer" data-id="axis-cube" data-name="Axis Cube" data-price="1250" data-material="Steel" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBgjFaNtTLyZgKc2CgjjamfyKq2fNrb6Ua1k1sL87pSAUJAz3bV5RWxFXxeSkVdJHFwYhdl0LcEBohcVZGeEjTBbNe7ii7FPzRX-lOJ0ZmskfTFdVG8-Ymen01rcmu4uE_wb3z6PrOIeEVPGJFYMtHZqtD5O6UJgnSolW-b0x_Cks6x6NH4cuOvkcTN_AgtnBn3zM7Jue0O9-9oC4N5iUEQTkYAEUeRiY93ZrHq9p3IJ7J9h9X-dqUMXg">
 <div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant relative">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist sculpture made of thin black iron wire forming the silhouette of a sphere within a cube. The lighting creates stark geometric shadows against a white backdrop. The style is architectural and clinical, focusing on the precision of the bends." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgjFaNtTLyZgKc2CgjjamfyKq2fNrb6Ua1k1sL87pSAUJAz3bV5RWxFXxeSkVdJHFwYhdl0LcEBohcVZGeEjTBbNe7ii7FPzRX-lOJ0ZmskfTFdVG8-Ymen01rcmu4uE_wb3z6PrOIeEVPGJFYMtHZqtD5O6UJgnSolW-b0x_Cks6x6NH4cuOvkcTN_AgtnBn3zM7Jue0O9-9oC4N5iUEQTkYAEUeRiY93ZrHq9p3IJ7J9h9X-dqUMXg"/>
 <div class="absolute top-3 right-3">
@@ -226,13 +253,13 @@
 <span class="font-mono-label text-mono-label text-on-surface-variant">$1,250</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Hand-welded structural study in oxidized carbon steel.</p>
-<button class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+<button data-add-to-cart="" class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
                             Add to Cart
                         </button>
 </div>
 </div>
 <!-- Product Card 2 -->
-<div class="group bg-white technical-border hover-lift transition-all duration-300">
+<div class="product-card group bg-white technical-border hover-lift transition-all duration-300 cursor-pointer" data-id="cu-05" data-name="Cu 0.5" data-price="480" data-material="Copper" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDAa4_4rzl86Zy5qaOaIXwjbCQI3sihCXETfkrk6F7h4_q9kOuxabcbRJz1BjB9FSAFbI2Iy1kXe_37aT_8UkEVJPFJ8vVou3yI1cfEUV_BcDqV0EA6Ejh77KSZQboHftH9zLTsi-6sgCiiaSqCQOWFY8ZLbI1bshILUr6MQx5vq1V33xWeZpe5j9g9aHb61AYR9_qGmcEqnSTtYNZn4OznFCgDAWc-D1HQRNsTnsoY4aSbGYgIcuR0eA">
 <div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Macro view of a spool of ultra-fine copper wire shimmering in warm golden light. The wire is perfectly wound with technical regularity. The background is a blurred industrial setting with soft bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAa4_4rzl86Zy5qaOaIXwjbCQI3sihCXETfkrk6F7h4_q9kOuxabcbRJz1BjB9FSAFbI2Iy1kXe_37aT_8UkEVJPFJ8vVou3yI1cfEUV_BcDqV0EA6Ejh77KSZQboHftH9zLTsi-6sgCiiaSqCQOWFY8ZLbI1bshILUr6MQx5vq1V33xWeZpe5j9g9aHb61AYR9_qGmcEqnSTtYNZn4OznFCgDAWc-D1HQRNsTnsoY4aSbGYgIcuR0eA"/>
 </div>
@@ -242,13 +269,13 @@
 <span class="font-mono-label text-mono-label text-on-surface-variant">$480</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Premium 0.5mm copper filament spool for bespoke jewelry base work.</p>
-<button class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+<button data-add-to-cart="" class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
                             Add to Cart
                         </button>
 </div>
 </div>
 <!-- Product Card 3 -->
-<div class="group bg-white technical-border hover-lift transition-all duration-300">
+<div class="product-card group bg-white technical-border hover-lift transition-all duration-300 cursor-pointer" data-id="topo-relief" data-name="Topo-Relief" data-price="3100" data-material="Titanium" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5NJYwvvd-MQvMHIHuITmdCQRu6NXbPw1lyqBmW1QDDFHImHuggVHjlKfrQVJH52O_E0kMBmvm79VmfR-plBFClsPrUI22sS_jtPVRmEbjSXfawlWPhp-mo0wewF-n9Apoyspbk88qMbixW5UezyyLXZdebOadS-ygzWs3NzigORDnTRQ3RQSkEOVXmze6UFCyOfDT74qlyE4fsXT-IV_uvPe1lVdOElIcPR9hvrmka6Gve--NdJdHg">
 <div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A wall-mounted wire sculpture resembling a topographical map. Made from different thicknesses of titanium wire, it creates a 3D relief effect. The metal has a subtle iridescent blue tint from heat treating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5NJYwvvd-MQvMHIHuITmdCQRu6NXbPw1lyqBmW1QDDFHImHuggVHjlKfrQVJH52O_E0kMBmvm79VmfR-plBFClsPrUI22sS_jtPVRmEbjSXfawlWPhp-mo0wewF-n9Apoyspbk88qMbixW5UezyyLXZdebOadS-ygzWs3NzigORDnTRQ3RQSkEOVXmze6UFCyOfDT74qlyE4fsXT-IV_uvPe1lVdOElIcPR9hvrmka6Gve--NdJdHg"/>
 </div>
@@ -258,13 +285,13 @@
 <span class="font-mono-label text-mono-label text-on-surface-variant">$3,100</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Heat-treated titanium topography. Wall-mounted installation piece.</p>
-<button class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+<button data-add-to-cart="" class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
                             Add to Cart
                         </button>
 </div>
 </div>
 <!-- Product Card 4 -->
-<div class="group bg-white technical-border hover-lift transition-all duration-300">
+<div class="product-card group bg-white technical-border hover-lift transition-all duration-300 cursor-pointer" data-id="nest-vessel" data-name="Nest Vessel" data-price="850" data-material="Silver" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWYBUp5ifvtauxBsKen9ppTo8YqZl04xrzl18CeOkTPVXgRoIhGu1QzrZD2bzgxmBQevrEExoADn6Ckn_ig_CjinAsoE4dfckLGtu4J2xEyb5lvW2udb8ko2Lv7Raw_TBvVyOEylaTz4Y6Is3T8a_hYWCcWQWZSEzRdXv7RegQ1clpjPpkcRWw1_qMOcCrd7kl_AtzXniPJeln573jIv5VeGDRdZnA6NstPrcX-3ASSH793H2UN7FXA">
 <div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of a delicate wire birdcage-like structure with an organic, nest-inspired design. The wires are chaotic yet controlled, made from sterling silver. Shot on a grey slate surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWYBUp5ifvtauxBsKen9ppTo8YqZl04xrzl18CeOkTPVXgRoIhGu1QzrZD2bzgxmBQevrEExoADn6Ckn_ig_CjinAsoE4dfckLGtu4J2xEyb5lvW2udb8ko2Lv7Raw_TBvVyOEylaTz4Y6Is3T8a_hYWCcWQWZSEzRdXv7RegQ1clpjPpkcRWw1_qMOcCrd7kl_AtzXniPJeln573jIv5VeGDRdZnA6NstPrcX-3ASSH793H2UN7FXA"/>
 </div>
@@ -274,16 +301,80 @@
 <span class="font-mono-label text-mono-label text-on-surface-variant">$850</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Sterling silver woven vessel. Intersection of functional craft and art.</p>
-<button class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+<button data-add-to-cart="" class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 5 (extra) -->
+<div class="product-card hm-extra hidden group bg-white technical-border hover-lift transition-all duration-300 cursor-pointer" data-id="helix-standard" data-name="Helix Standard" data-price="1780" data-material="Steel" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBgjFaNtTLyZgKc2CgjjamfyKq2fNrb6Ua1k1sL87pSAUJAz3bV5RWxFXxeSkVdJHFwYhdl0LcEBohcVZGeEjTBbNe7ii7FPzRX-lOJ0ZmskfTFdVG8-Ymen01rcmu4uE_wb3z6PrOIeEVPGJFYMtHZqtD5O6UJgnSolW-b0x_Cks6x6NH4cuOvkcTN_AgtnBn3zM7Jue0O9-9oC4N5iUEQTkYAEUeRiY93ZrHq9p3IJ7J9h9X-dqUMXg">
+<div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Structural steel wire helix sculpture on a plinth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgjFaNtTLyZgKc2CgjjamfyKq2fNrb6Ua1k1sL87pSAUJAz3bV5RWxFXxeSkVdJHFwYhdl0LcEBohcVZGeEjTBbNe7ii7FPzRX-lOJ0ZmskfTFdVG8-Ymen01rcmu4uE_wb3z6PrOIeEVPGJFYMtHZqtD5O6UJgnSolW-b0x_Cks6x6NH4cuOvkcTN_AgtnBn3zM7Jue0O9-9oC4N5iUEQTkYAEUeRiY93ZrHq9p3IJ7J9h9X-dqUMXg"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary leading-none">Helix Standard</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">$1,780</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Free-standing carbon steel helix, hand-tensioned across 42 structural nodes.</p>
+<button data-add-to-cart="" class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 6 (extra) -->
+<div class="product-card hm-extra hidden group bg-white technical-border hover-lift transition-all duration-300 cursor-pointer" data-id="filament-ag" data-name="Filament Ag" data-price="610" data-material="Silver" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWYBUp5ifvtauxBsKen9ppTo8YqZl04xrzl18CeOkTPVXgRoIhGu1QzrZD2bzgxmBQevrEExoADn6Ckn_ig_CjinAsoE4dfckLGtu4J2xEyb5lvW2udb8ko2Lv7Raw_TBvVyOEylaTz4Y6Is3T8a_hYWCcWQWZSEzRdXv7RegQ1clpjPpkcRWw1_qMOcCrd7kl_AtzXniPJeln573jIv5VeGDRdZnA6NstPrcX-3ASSH793H2UN7FXA">
+<div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Fine sterling silver filament spool." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkWYBUp5ifvtauxBsKen9ppTo8YqZl04xrzl18CeOkTPVXgRoIhGu1QzrZD2bzgxmBQevrEExoADn6Ckn_ig_CjinAsoE4dfckLGtu4J2xEyb5lvW2udb8ko2Lv7Raw_TBvVyOEylaTz4Y6Is3T8a_hYWCcWQWZSEzRdXv7RegQ1clpjPpkcRWw1_qMOcCrd7kl_AtzXniPJeln573jIv5VeGDRdZnA6NstPrcX-3ASSH793H2UN7FXA"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary leading-none">Filament Ag</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">$610</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">0.4mm sterling silver filament spool for fine jewelry armatures.</p>
+<button data-add-to-cart="" class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 7 (extra) -->
+<div class="product-card hm-extra hidden group bg-white technical-border hover-lift transition-all duration-300 cursor-pointer" data-id="grid-frame" data-name="Grid Frame" data-price="2340" data-material="Titanium" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5NJYwvvd-MQvMHIHuITmdCQRu6NXbPw1lyqBmW1QDDFHImHuggVHjlKfrQVJH52O_E0kMBmvm79VmfR-plBFClsPrUI22sS_jtPVRmEbjSXfawlWPhp-mo0wewF-n9Apoyspbk88qMbixW5UezyyLXZdebOadS-ygzWs3NzigORDnTRQ3RQSkEOVXmze6UFCyOfDT74qlyE4fsXT-IV_uvPe1lVdOElIcPR9hvrmka6Gve--NdJdHg">
+<div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Titanium wire grid frame wall panel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5NJYwvvd-MQvMHIHuITmdCQRu6NXbPw1lyqBmW1QDDFHImHuggVHjlKfrQVJH52O_E0kMBmvm79VmfR-plBFClsPrUI22sS_jtPVRmEbjSXfawlWPhp-mo0wewF-n9Apoyspbk88qMbixW5UezyyLXZdebOadS-ygzWs3NzigORDnTRQ3RQSkEOVXmze6UFCyOfDT74qlyE4fsXT-IV_uvPe1lVdOElIcPR9hvrmka6Gve--NdJdHg"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary leading-none">Grid Frame</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">$2,340</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Aerospace-grade titanium grid panel, wall-mounted with concealed fixings.</p>
+<button data-add-to-cart="" class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 8 (extra) -->
+<div class="product-card hm-extra hidden group bg-white technical-border hover-lift transition-all duration-300 cursor-pointer" data-id="copper-coil-xl" data-name="Copper Coil XL" data-price="390" data-material="Copper" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDAa4_4rzl86Zy5qaOaIXwjbCQI3sihCXETfkrk6F7h4_q9kOuxabcbRJz1BjB9FSAFbI2Iy1kXe_37aT_8UkEVJPFJ8vVou3yI1cfEUV_BcDqV0EA6Ejh77KSZQboHftH9zLTsi-6sgCiiaSqCQOWFY8ZLbI1bshILUr6MQx5vq1V33xWeZpe5j9g9aHb61AYR9_qGmcEqnSTtYNZn4OznFCgDAWc-D1HQRNsTnsoY4aSbGYgIcuR0eA">
+<div class="aspect-square bg-surface overflow-hidden border-b border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Large spool of copper wire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAa4_4rzl86Zy5qaOaIXwjbCQI3sihCXETfkrk6F7h4_q9kOuxabcbRJz1BjB9FSAFbI2Iy1kXe_37aT_8UkEVJPFJ8vVou3yI1cfEUV_BcDqV0EA6Ejh77KSZQboHftH9zLTsi-6sgCiiaSqCQOWFY8ZLbI1bshILUr6MQx5vq1V33xWeZpe5j9g9aHb61AYR9_qGmcEqnSTtYNZn4OznFCgDAWc-D1HQRNsTnsoY4aSbGYgIcuR0eA"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary leading-none">Copper Coil XL</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">$390</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Bulk 1.0mm copper coil for large-scale structural and decorative work.</p>
+<button data-add-to-cart="" class="w-full py-3 bg-white border border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary hover:text-white transition-all active:scale-[0.98]">
                             Add to Cart
                         </button>
 </div>
 </div>
 </div>
 <div class="mt-16 flex justify-center">
-<button class="flex items-center gap-2 font-label-md text-primary uppercase tracking-widest group">
-                    View Entire Collection
-                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="trending_flat">trending_flat</span>
+<button id="view-entire-collection" class="flex items-center gap-2 font-label-md text-primary uppercase tracking-widest group">
+<span class="hm-view-all-label">View Entire Collection</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="trending_flat">trending_flat</span>
 </button>
 </div>
 </section>
@@ -292,25 +383,25 @@
 <footer class="bg-surface w-full py-12 border-t border-outline-variant mt-24">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
 <div>
-<div class="text-label-md font-label-md font-bold text-primary mb-4">Ferrum Precise</div>
+<div class="text-label-md font-label-md font-bold text-primary mb-4">HM TRADELINK</div>
 <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
                     Advancing the craft of wirework through technical precision and architectural vision. Built for the modern collector.
                 </p>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-8">© 2024 Ferrum Precise. All rights reserved.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-8">© 2024 HM TRADELINK. All rights reserved.</p>
 </div>
 <div class="flex flex-col gap-2">
 <span class="font-label-md text-label-md text-primary mb-2">NAVIGATE</span>
 <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="bespoke-orders.html">Bespoke Orders</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Material Grades</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Studio Journal</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="bespoke-orders.html">Material Grades</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="about.html">Studio Journal</a>
 <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="index.html">Catalog</a>
 </div>
 <div class="flex flex-col gap-2">
 <span class="font-label-md text-label-md text-primary mb-2">CONNECT</span>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Instagram</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">LinkedIn</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Shipping &amp; Returns</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="https://www.instagram.com/" rel="noopener" target="_blank">Instagram</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="privacy-policy.html">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="shipping-returns.html">Shipping &amp; Returns</a>
 </div>
 </div>
 </footer>
@@ -338,4 +429,5 @@
             searchInput.parentElement.classList.remove('ring-1', 'ring-primary');
         });
     </script>
+<script src="assets/js/site.js"></script>
 </body></html>

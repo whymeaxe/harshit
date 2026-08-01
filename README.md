@@ -17,17 +17,42 @@ ready-to-host static site.
 | Contact | `assets/screenshots/contact.png` |
 | Checkout | `assets/screenshots/checkout.png` |
 
+## 🔧 Interactivity
+
+All pages are now fully wired up with real client-side functionality (see
+`assets/js/site.js`):
+
+- **Cart** — persistent (localStorage-backed) shopping cart with a slide-over
+  drawer, quantity controls, and a live badge count on every page's cart icon.
+- **Catalog (index.html)** — working Filter (by material) and Sort (price/name)
+  controls, live search, tap-to-quick-view on any product card, working
+  "Add to Cart" buttons, and a "View Entire Collection" toggle that reveals
+  additional pieces.
+- **Checkout** — the order summary renders your actual cart contents (not
+  static placeholder items), calculates subtotal/shipping/tax/total live, and
+  "Complete Order" validates the form, confirms the order, and clears the cart.
+- **About / Bespoke Orders / Contact** — all CTAs (View Our Facility, Request
+  Quote, View Full Archive, Book Session, etc.) now navigate, scroll, or reveal
+  content instead of being dead links, and every footer link points to a real
+  page (including new `privacy-policy.html`, `terms-of-service.html`, and
+  `shipping-returns.html`).
+
 ## 📁 Project Structure
 
 ```
 .
-├── index.html            # Home / catalog landing page
-├── about.html             # About Us / founder story
-├── bespoke-orders.html    # Custom / bespoke order request page
-├── contact.html           # Contact & inquiries page
-├── checkout.html          # Secure checkout page
+├── index.html              # Home / catalog landing page
+├── about.html              # About Us / founder story
+├── bespoke-orders.html     # Custom / bespoke order request page
+├── contact.html            # Contact & inquiries page
+├── checkout.html           # Secure checkout page (reads live cart data)
+├── privacy-policy.html     # Privacy policy
+├── terms-of-service.html   # Terms of service
+├── shipping-returns.html   # Shipping & returns policy
 └── assets/
-    └── screenshots/       # Design reference screenshots
+    ├── js/
+    │   └── site.js         # Shared cart, drawer, filter/sort, and modal logic
+    └── screenshots/        # Design reference screenshots
 ```
 
 ## 🎨 Design System

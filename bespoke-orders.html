@@ -132,7 +132,7 @@
 <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="contact.html">Contact</a>
 </nav>
 <div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary cursor-pointer transition-all active:scale-95" data-icon="shopping_cart">shopping_cart</span>
+<span class="material-symbols-outlined text-primary cursor-pointer transition-all active:scale-95 relative" data-cart-trigger="" data-icon="shopping_cart">shopping_cart</span>
 </div>
 </div>
 </header>
@@ -272,9 +272,9 @@
 <span class="font-mono-label text-mono-label text-outline uppercase tracking-widest">Case Studies</span>
 <h2 class="font-headline-lg text-headline-lg text-primary mt-2">Technical Portfolio</h2>
 </div>
-<a class="font-label-md text-label-md text-primary underline underline-offset-4 flex items-center gap-1" href="#">
+<button id="view-full-archive" class="font-label-md text-label-md text-primary underline underline-offset-4 flex items-center gap-1">
                     View Full Archive
-                </a>
+                </button>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 h-[800px]">
 <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-lg border border-outline-variant group">
@@ -297,6 +297,26 @@
 </div>
 </div>
 </div>
+<div class="hm-portfolio-extra hidden grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+<div class="relative overflow-hidden rounded-lg border border-outline-variant group h-64">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A wall-mounted radial wire sculpture in a corporate reception area." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc1yLwAoaAceexyoLuSD-wXcufUe5D31MLKYpMOYPMW1o_S-fjjKWaXbxkvuy4Y8Wxr4Ne1zC6q3qWsigNOsp1FP_Wntcbh8clUBm2GqEYxjAAZxKVSAbekqYr5zMIGeeDs1H0-wcJDyw73MoOe-cOCizkIC6IbdC88kbuqpF3tBfCLEFKVIPoqF5pFW5rIGSNn3WkpJ_gmvyZWNClIbizo9m8TC9de82e3iQw59IgBmRUmB_PHBCGsA"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
+<h4 class="font-label-md text-label-md">Radial Reception Piece</h4>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-lg border border-outline-variant group h-64">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A hand-welded steel spiral staircase railing in an industrial loft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH22XRheJkbBL1LuEQp-Ta0s1EQ7HVS6Nv8CMFOpZJ6m8hUcaJGSrz3aUkXrCM0ag9zaZgjWLgvm3bUUpTRLANw1-5mivyASlwQuVUozZEF5WjSlEs4eVF1nU4VtdwYPVYlbrSH7Xl0EHUXoes0QSodbom1eOHkTwjPGAkMk5Et7WthHnU2TfeUQta2DewjicDdwtcbgHh99KgrbBu9PiigA4LF3SO6THPxhQV1FQslsZE9eEkBjzIQQ"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
+<h4 class="font-label-md text-label-md">Loft Staircase Railing</h4>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-lg border border-outline-variant group h-64">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist wire chandelier installation above a dining table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIYDnhhfq0fzgwIv1TAd3NSDDXJEAJWv5N4OkRZGJIqObGT3WOyjNTBtzO8jo6bVyerPKKleA2vU2Or8gi8HnWrnUDmdwctXORalCN2WpOIHwc2yg5PHWLmQXhWxsnPF8Tudlm_s1nPrujU4tHFBrruDOn39wPIAg245i98uB96Cy3XKuZn4JpMWET4uXQYGrWn-CBtDKfs28zUD6YlKMQq44mWuYqV9Zo5TNsFhM-UNMjjqxmEyyLEQ"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white">
+<h4 class="font-label-md text-label-md">Suspended Wire Chandelier</h4>
+</div>
+</div>
+</div>
 </section>
 </main>
 <!-- Footer -->
@@ -307,13 +327,13 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">High-precision wireframe engineering and artisanal metalwork for modern spaces.</p>
 </div>
 <div class="flex flex-col gap-2">
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="privacy-policy.html">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="terms-of-service.html">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="shipping-returns.html">Shipping &amp; Returns</a>
 </div>
 <div class="flex flex-col gap-2 md:items-end">
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="https://www.instagram.com/" rel="noopener" target="_blank">Instagram</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>
 <div class="pt-4 font-body-sm text-body-sm text-on-surface-variant">© 2024 HM TRADELINK. All rights reserved.</div>
 </div>
 </div>
@@ -330,4 +350,5 @@
             });
         });
     </script>
+<script src="assets/js/site.js"></script>
 </body></html>
